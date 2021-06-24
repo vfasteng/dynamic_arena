@@ -80,9 +80,7 @@
     <script src="aframe-ground-component.min.js"></script>
 
 	  <!--onclick-->
-         <script>
-
-	  </script>
+         <script src="script.js"></script>
 	  
 	  <style>
       .button:hover {
@@ -150,6 +148,9 @@
                      event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
                      dynamic-body shadow>
             </a-mixin>
+		    <!--primitive mixins-->
+		    
+		    
 	    <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.5"
                      clickable hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
@@ -184,25 +185,7 @@
             <a-asset-item id="g16" src=""></a-asset-item><!--frontcover-->
             <a-asset-item id="g17" src=""					"></a-asset-item><!--sump-->
             <a-asset-item id="g18" src=""></a-asset-item><!--pulley-->
-	    <a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
-                     hoverable grabbable stretchable draggable droppable
-                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                     dynamic-body shadow>
-            </a-mixin>
-            <a-mixin id="gglb" geometry="gltf-model: model"
-                     hoverable grabbable stretchable draggable droppable
-                     event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                     event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                     dynamic-body shadow>
-            </a-mixin>
-            <a-mixin id="controller" super-hands="colliderEvent: collisions;
-                              colliderEventProperty: els;
-                              colliderEndEvent: collisions;
-                              colliderEndEventProperty: clearedEls;
-                              grabStartButtons: gripdown, pointdown, triggerdown;
-                              grabEndButtons: gripup, pointup, triggerup" static-body="shape: sphere; sphereRadius: 0.11" oculus-touch-controls="hand: left" physics-collider collision-filter="collidesWith: default;" collisionForces="false">
-            			</a-mixin>
+	    
 	  
 		    <a-mixin id="red" material="color: red"></a-mixin>
 		    <a-mixin id="blue" material="color: blue"></a-mixin>
@@ -244,6 +227,12 @@
 						   targetAxis: 0 1 0;
 						   pivot: 0 0.1 0;
 					   targetPivot: 0 0.5 0;"></a-entity>
+			<a-entity position="0 2 0" rotation="0 0 0" scale="1 1 1">
+				<a-entity position="0 2 0" rotation="0 0 0" scale="1 1 1">
+				
+				</a-entity>
+			</a-entity>
+			
 		</a-entity>
 		
 		
