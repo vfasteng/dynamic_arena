@@ -241,13 +241,13 @@
            			 event-set__dragover-end="material.wireframe: false"
 					 dynamic-body shadow>
             </a-mixin>		
-			<a-mixin id="plan" ggeometry="primitive: plane; height: 10; width: 10" material="side: double"
+			<a-mixin id="plan" geometry="primitive: plane; height: 1; width: 1" material="side: double"
                      clickable hoverable grabbable stretchable draggable droppable
                      event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
                      event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
 					 event-set__dragover-start="material.wireframe: true"
            			 event-set__dragover-end="material.wireframe: false"
-					 dynamic-body shadow>
+					 static-body shadow>
             </a-mixin>		
 			<a-mixin id="cone" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.25"
                      hoverable grabbable stretchable draggable droppable
@@ -382,7 +382,12 @@
 		    <a-mixin id="hinged-target" material="color: red"></a-mixin>
 		    <a-mixin id="constraint" createConstraint="type: Lock; "></a-mixin>
 		    <a-mixin id="weight" mass="12.0"></a-mixin>
-		    
+		    <a-mixin id="p114" geometry="primitive:plane;color:lightblue"></a-mixin>
+		    <a-mixin id="p115" geometry="primitive:plane;color:lightblue"></a-mixin>
+		    <a-mixin id="p116" geometry="primitive:plane;color:lightblue"></a-mixin>
+		    <a-mixin id="p117" geometry="primitive:plane;color:lightblue"></a-mixin>
+					 
+										 
 		    <a-mixin id="general" animation="" animation-mixer="" auto-detect-controllers="" cursor="" gamepad-controls="" draggable="" gltf-model gltf-part-plus="" gridhelper="" hand-controls="" inspector="" jump-ability="" model-center="bottomAlign:true" movement-controls="" obj-model object-model ocean="" oculus-touch-controls super-hands="" stretchable touch-controls tracked-controls-webvr tracked-controls-webxr wasd-controls windows-motion-controls></a-mixin>
 		</a-assets>
 		
