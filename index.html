@@ -391,12 +391,12 @@
 		    <a-mixin id="general" animation="" animation-mixer="" auto-detect-controllers="" cursor="" gamepad-controls="" draggable="" gltf-model gltf-part-plus="" gridhelper="" hand-controls="" inspector="" jump-ability="" model-center="bottomAlign:true" movement-controls="" obj-model object-model ocean="" oculus-touch-controls super-hands="" stretchable touch-controls tracked-controls-webvr tracked-controls-webxr wasd-controls windows-motion-controls></a-mixin>
 			<a-asset-item id="saxes" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fsaxes-entity.glb?v=1625377964568"></a-asset-item>
 		  </a-assets>
-		  <a-entity gltf-model="#saxes" position="-2.5 2.5 0" rotation="0 0 -90" scale="1 1 1" static-body click-impulse></a-entity>
-	
+		  
 			<a-entity gltf-model="#cadboxx-three" position="5.5 2.5 0" rotation="0 0 -90" scale="0.25 0.25 0.25" dynamic-body click-impulse></a-entity>
 	
-		<a-entity>
-															    
+		<a-entity static-body>
+			<a-entity gltf-model="#saxes" position="-2.5 2.5 0" rotation="0 0 0" scale="1 1 1" dynamic-body click-impulse></a-entity>
+												    
 		</a-entity
 		
 		<a-entity gltf-model="#114" mixin="p114" rotation="0 0 0" scale="0.25 0.25 0.25" dynamic-body click-impulse></a-entity>
