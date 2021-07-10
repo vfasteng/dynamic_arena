@@ -170,13 +170,13 @@
 			<a-asset-item id="prt8" src="#prt08"></a-asset-item>
 			<a-asset-item id="prt9" src="#prt09"></a-asset-item>
 					
-			<a-mixin id="hingeBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="sliderBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="lockBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="pointBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="rotxBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="rotyBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
-			<a-mixin id="rotzBottom1" gltf-model="#prt1" gltf-helpers="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="hingeBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="sliderBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="lockBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="pointBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="rotxBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="rotyBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
+			<a-mixin id="rotzBottom1" gltf-model="#prt1" model-center="bottomAlign:true" position="0 0 0"></a-mixin>
 			
 		    	<a-mixin id="cube" geometry="primitive: box; width: 1.0; height: 1.0; depth: 1.0"
 				     clickable hoverable grabbable stretchable draggable droppable
@@ -417,7 +417,7 @@
 		<a-entity gltf-model="#cadboxx-three" position="2 4 0" rotation="0 0 -90" scale="0.25 0.25 0.25" dynamic-body click-impulse></a-entity>
 
 		<!--spinning-box-->
-		<a-entity position="-5 1 0" rotation="0 0 0">
+		<a-entity position="-3 1 0" rotation="0 0 0">
 					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
 
 					</a-cylinder>
@@ -431,15 +431,15 @@
 						   targetAxis: 0 1 0;
 						   pivot: 0 0 0;
 					   	targetPivot: 0 2 0;">
-						<a-entity position="0 2 0" rotation="0 0 0" scale="1 1 1" click-impulse>
-							<a-entity position="0 2 0" rotation="0 0 0" scale="1 1 1" click-impulse>
+						<a-entity src="#116" position="0 2 0" rotation="0 0 0" scale="1 1 1" click-impulse>
+							<a-entity src="#116" position="0 2 0" rotation="0 0 0" scale="1 1 1" click-impulse>
 
 							</a-entity>
 						</a-entity>		 					 
 					</a-entity>	
 		</a-entity>
 		
-		<!--gearbox-->
+		<!--gearbox--
 			<a-entity position="-2.5 2.5 6" rotation="0 0 0">
 					<a-cylinder id="hinge114-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
 
@@ -461,7 +461,7 @@
 						</a-entity>		 					 
 					</a-entity>	
 		</a-entity>
-		<!--uj-->									 
+		<!--uj--				 
 		<a-entity id="uj-assembly" mixin="assem" position="0 5 0" rotation="0 0 0" scale=".25 .25 .25">
 			
 	       
@@ -707,60 +707,4 @@
 </html>
 
     
-    <!--Just include the toolkit js file from a CDN--
-    <script src="https://unpkg.com/aframe-vartiste-toolkit@latest/vartiste-toolkit.js"></script>
-    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.1/dist/aframe-gltf-helpers.min.js"></script>
-    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
-    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
     
-<body>
-
-<!--script>
-	<a-entity position="0 3 -5">
-
-            <a-cylinder id="hinge3-target" position="0 0 0 " color="#777" static-body radius="5" height="1.0">
-
-            </a-cylinder>
-            <a-entity id="c11" class="cube" mixin="cube" position="0 0 0" material="color: blue"
-                      constraint="type: hinge;
-                           target: #hinge3-target;
-                           axis: 0 1 0;
-                           targetAxis: 0 1 0;
-                           pivot: 0 0.1 0;
-                           targetPivot: 0 1 0;"></a-entity>
-							   <a-entity class="cube" mixin="cube" position="0 0 0" material="color: green"
-	                      constraint="type: hinge;
-	                           target: #c11;
-	                           axis: 0 1 0;
-	                           targetAxis: 0 0 1;
-	                           pivot: 0 0 0;
-	                           targetPivot: 0 0 1.0"></a-entity>
-								   	<a-entity class="cube" mixin="cube" position="0 0 0" material="color: green"
-		                      constraint="type: hinge;
-		                           target: #c11;
-	                           axis: 0 1 0;
-	                           targetAxis: 0 0 1;
-	                           pivot: 0 0 0;
-	                           targetPivot: 0 0 -1.0"></a-entity>
-								   <a-entity class="cube" mixin="cube" position="0 0 0" material="color: red"
-	                      constraint="type: hinge;
-	                           target: #c11;
-	                           axis: 0 1 0;
-	                           targetAxis: 0 1 0;
-	                           pivot: 0 0 0;
-	                           targetPivot: 1.0 0 0"></a-entity>
-								   	<a-entity class="cube" mixin="cube" position="0 0 0" material="color: red"
-		                      constraint="type: hinge;
-		                           target: #c11;
-	                           axis: 0 1 0;
-	                           targetAxis: 0 1 0;
-	                           pivot: 0 0 0;
-	                           targetPivot: -1.0 0 0"></a-entity>
-		        </a-entity>
-		</script-->
-
-
-
-		
-		
-		
