@@ -417,7 +417,7 @@
 		<a-entity gltf-model="#cadboxx-three" position="2 4 0" rotation="0 0 -90" scale="0.25 0.25 0.25" dynamic-body click-impulse></a-entity>
 
 		<!--spinning-box-->
-		<a-entity position="-3 1 0" rotation="0 0 0">
+		<a-entity position="-3 0 0" rotation="0 0 0">
 					<a-cylinder id="hinge4-target" position="0 0 0" rotation="0 0 0" color="#777" static-body radius="0.5" height="0.01">
 
 					</a-cylinder>
@@ -571,24 +571,7 @@
 	    <a-entity id="bx6" mixin="cube" position="2.5 7 -2" color="green" outline="0.2" scale="2 2 2" click-impulse></a-entity>
 
 	  
-	    <!--basic lock constraint from physics system--
-	  <a-entity position="-3 2 -1">
-        
-        <a-box id="lock-target"
-               position="0 1.0 0"
-               scale="1 1 1"
-               color="#777"
-               static-body>
-        </a-box>
-        <a-box color="#F00"
-               position="0 2.5 0"
-               scale="1 1 1"
-               dynamic-body
-               constraint="type: lock;
-                           target: #lock-target;
-                           maxForce: 100">
-        </a-box>
-      </a-entity>
+	    
 	    <!-- freewheel working with ckick-impulse from mouse-->
         
     <-a-entity position="-4 0 -4">
