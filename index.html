@@ -29,7 +29,7 @@
     <script src="~/js/play-all-model-animations.js"></script>
 	
     <!--extras-->
-    <script src="js/aframe-master.min.js"></script>WONT RUN IF YOU REF IT HERE  BUT IT IS THERE-->
+    
     <script src="js/aframe-extras.min.js"></script>
     <script src="js/aframe-extras.controls.mih.js"></script>
     <script src="js/aframe-extras.misc.js"></script>
@@ -82,14 +82,10 @@
 	
 	
 </head>
+	
+	
 <body>
-     <div id="container">
-        <button id="loadModel" class="button" onclick="loadModel()" position="0 1 -2" rotation="0 0 0" model-center="bottomAlign: true"><span>Load Model</span></button>
-        <button id="position-it" class="button"><span>Physics </span></button>
-        <button id="set-limits" class="button"><span>Constraints</span></button>
-        <button id="export-scene" class="button"><span>Animate</button>
-        <button id="export-scene-bin" class="button"><span>Downloads</span></button>
-        </div>
+     
     <a-scene ground="preset: contact; ground: flat; dressingAmount: 0" physics="debug: false; friction: 0.1; restitution: 0.5">
 	<a-assets>
             <a-mixin id="mycursor" position="0 0 -0.5" raycaster geometry="primitive: ring; radiusOuter: 0.008; radiusInner: 0.005; segmentsTheta: 32" material="color: white; shader: flat" static-body="shape: sphere; sphereRadius: 0.001" super-hands="colliderEvent: raycaster-intersection;colliderEventProperty: els;colliderEndEvent:raycaster-intersection-cleared; colliderEndEventProperty: clearedEls;colliderState:"></a-mixin>
