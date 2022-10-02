@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Layout</title>
+	<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@4.3.1/dist/aframe-layout-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-datgui-component/dist/aframe-datgui-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+    <script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-selectable-light-component/master/dist/aframe-selectable-light-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-csg-meshs/index.js"></script>
+	
+	<script src="https://cdn.rawgit.com/gftruj/aframe-physics-spring/master/dist/aframe-spring.min.js"></script>
+    <script src="https://unpkg.com/aframe-spherical-controls-component/dist/aframe-spherical-controls-component.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-helpers@0.0.2/dist/aframe-gltf-helpers.min.js"></script>
+    <script src="https://rawgit.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script>
+    <script src="~/js/play-all-model-animations.js"></script>
+	
+    <!--extras-->
+    <script src="js/aframe-master.min.js"></script>WONT RUN IF YOU REF IT HERE  BUT IT IS THERE-->
+    <script src="js/aframe-extras.min.js"></script>
+    <script src="js/aframe-extras.controls.mih.js"></script>
+    <script src="js/aframe-extras.misc.js"></script>
+    <script src="js/aframe-extras.loaders.js"></script>
+    <script src="js/aframe-extras.pathfinding.js"></script>
+    <script src="js/aframe-extras.primitives.js"></script>
+    <script src="js/aframe-stl-model-component.min.js"></script>
+    <script src="js/aframe-drag-and-drop-component.min.js"></script>
+    <script src="js/aframe-crawling-cursor.min.js"></script>
+
+    <!--reaction components-->
+    <script src="reaction_components/clickable.js"></script>
+    <script src="reaction_components/draggable.js"></script>
+    <script src="reaction_components/drag-droppable.js"></script>
+    <script src="reaction_components/hoverable.js"></script>
+    <script src="reaction_components/stretchable.js"></script>
+    <script src="reaction_components/droppable.js"></script>
+    <script src="reaction_components/grabbable.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+	
+    
+	
+	
+	
+</head>
+<body>
+	<a-scene inspector="" >
+		<a-assets>
+		
+		</a-assets>
+	
+	 <!--cadboxx walls, floor and lighting to 40 square-->
+      <a-entity id="planeboxx" position="0 0 0" scale="1 1 1">
+        <a-entity id="planeboxx" position="0 0 0">
+            <a-entity id="planebox" position="0 0 0">
+                <a-plane side="double" color="green" position="0 -20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                <a-plane side="double" color="green" position="0 20 0" rotation="-90 0 0" height="40" width="40" material="" static-body></a-plane>
+                <a-plane side="double" color="blue" position="0 0 20" rotation="0 0 0" height="40" width="40" material="" static-body></a-plane>
+                <a-plane side="double" color="blue" position="0 0 -20" rotation="0 0 0" height="40" width="40" material="" satic-body></a-plane>
+                <a-plane side="double" color="red" position="20 0 0" rotation="0 -90 0" height="40" width="40" material="" static-body></a-plane>
+                <a-plane side="double" color="red" position="-20 0 0" rotation="0 90 0" height="40" width="40" material="" static-body></a-plane>
+            </a-entity>
+            <!--mesh overlay for walls-->
+            <a-box position="0 -20 0" rotation="0 0 0" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+            <a-box position="0 20 0" rotation="0 0 0" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+            <a-box position="0 0 -20" rotation="90 0 0" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+            <a-box position="0 0 20" rotation="90 0 0" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+            <a-box position="-20 0 0" rotation="0 0 90" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+            <a-box position="20 0 0" rotation="0 0 90" width="40" depth="40" height="0.2" color="lightblue" opacity=".05" gridhelper="size: 40;divisions:5" static-body></a-box>
+
+			<!--panel hosts--
+            <a-box position="0 -19 0" rotation="0 0 0" width="20" depth="20" height="0.5" color="yellow" opacity="1" static-body>
+				
+			</a-box>
+            <a-box position="0 19 0" rotation="0 0 0" width="20" depth="20" height="0.5" color="yellow" opacity="1" gridhelper="size: 20;divisions:5" static-body></a-box>
+            -->
+			<a-box position="0 0 -19.5" rotation="90 0 0" width="40" depth="40" height="0.5" color="lightblue" opacity=".1" static-body>
+				<a-box id="cmnd1" class="clickable" position="-16 .2 -1" rotation="0 0 0" width="4" depth="2" height="0.5" color="green" opacity="1" onclick="injinsp()" static-body></a-box>
+				<a-box id="cmnd2" class="clickable" position="-16 .2 -8" rotation="0 0 0" width="4" depth="4" height="0.5" color="red" opacity="1" onclick="evr()" static-body></a-box>
+				<a-box id="cmnd3" class="clickable" position="-16 .2 -16" rotation="0 0 0" width="4" depth="4" height="0.5" color="purple" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd4" class="clickable" position="-8 .2 -1" rotation="0 0 0" width="4" depth="2" height="0.5" color="orange" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd5" class="clickable" position="-8 .2 -8" rotation="0 0 0" width="4" depth="4" height="0.5" color="brown" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd6" class="clickable" position="-8 .2 -16" rotation="0 0 0" width="4" depth="4" height="0.5" color="crimson" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd7" class="clickable" position="0 .2 -1" rotation="0 0 0" width="4" depth="2" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd8" class="clickable" position="0 .2 -8" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd9" class="clickable" position="0 .2 -16" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd10" class="clickable" position="8 .2 -1" rotation="0 0 0" width="4" depth="2" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd11" class="clickable" position="8 .2 -8" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd12" class="clickable" position="8 .2 -16" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd13" class="clickable" position="16 .2 -1" rotation="0 0 0" width="4" depth="2" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd14" class="clickable" position="16 .2 -8" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				<a-box id="cmnd15" class="clickable" position="16 .2 -16" rotation="0 0 0" width="4" depth="4" height="0.5" color="yellow" opacity="1" onclick="myFunction()" static-body></a-box>
+				
+			</a-box>
+			<!--
+            <a-box position="0 0 19" rotation="90 0 0" width="20" depth="20" height="0.5" color="yellow" opacity="0" gridhelper="size: 20;divisions:5" static-body>
+				<a-box id="cmnd2" class="clickable" position="0 -2 0" rotation="0 0 0" width="4" depth="4" height="0.5" color="blue" opacity="1" onclick="myFunction()" static-body>
+			
+				</a-box>
+			</a-box>
+            <a-box position="-19 0 0" rotation="0 0 90" width="20" depth="20" height="0.5" color="yellow" opacity="0" gridhelper="size: 20;divisions:5" static-body></a-box>
+			<a-box position="19 0 0" rotation="0 0 90" width="20" depth="20" height="0.5" color="yellow" opacity="0" gridhelper="size: 20;divisions:5" static-body></a-box>
+
+
+            <!-- <a-box position="0 -0.1 0" rotation="0 0 0" width="15" depth="15" height="0.2" color="lightblue" opacity=".25" gridhelper="size: 15;divisions:15" static-body></a-box>-->
+            <a-cylinder id="ground" position="0 -0.0001 0" rotation="0 0 0" radius="30" height="0.0002" color="lightblue" opacity=".25" gridhelper="size: 40;divisions:20" static-body></a-cylinder>
+
+            <a-light type="hemisphere" intensity="2.0"></a-light>
+        </a-entity>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	    <a-camera position="0 1.6 4">
+        <a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+      </a-camera>
+        
+        
+        
+        
+        
+	</a-scene>
+		<script type="text/javascript">
+      
+      
+      
+    </script>
+		<script type="text/javascript">
+
+		function(){
+		   scene.components.inspector.injectInspector;
+		 };
+		 
+		 function injinsp(){
+		   scene.components.inspector.injectInspector;
+		 };
+		 
+		 function evr(){
+		   document.querySelector('a-scene').enterVR();
+		 };
+		 
+		 function openEditor()
+			{
+			    window.postMessage('INJECT_AFRAME_INSPECTOR','*');
+			};
+		 
+		 document.querySelector('#cmnd1').addEventListener('click', function() {
+		  document.querySelector('a-scene').enterVR();
+		  });
+		   document.querySelector('#cmnd2').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+		  });
+		  document.querySelector('#cmnd3').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('perspective');
+		  });
+		  
+		  document.querySelector('#cmnd4').addEventListener('click', function ()
+			{
+			    window.postMessage('INJECT_AFRAME_INSPECTOR','*');
+			};
+		   document.querySelector('#cmnd5').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+		  });
+		  document.querySelector('#cmnd6').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('perspective');
+		  });
+		  document.querySelector('#cmnd7').addEventListener('click', function() {
+		  document.querySelector('a-scene').enterVR();
+		  });
+		   document.querySelector('#cmnd8').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+		  });
+		  document.querySelector('#cmnd9').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('perspective');
+		  });
+		  
+		  document.querySelector('#cmnd10').addEventListener('click', function() {
+		  document.querySelector('a-scene').enterVR();
+		  });
+		   document.querySelector('#cmnd11').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+		  });
+		  document.querySelector('#cmnd12').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('perspective');
+		  });
+		  document.querySelector('#cmnd13').addEventListener('click', function() {
+		  document.querySelector('a-scene').enterVR();
+		  });
+		   document.querySelector('#cmnd14').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('equirectangular');
+		  });
+		  document.querySelector('#cmnd15').addEventListener('click', function() {
+		   document.querySelector('a-scene').components.screenshot.capture('perspective');
+		  });
+		  
+		 
+		</script>
+
+</body>
+</html>
